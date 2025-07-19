@@ -1,0 +1,77 @@
+.timeline-loop-wrapper {
+  background: linear-gradient(to right, #000000, #021B2A, #000000);
+  padding: 60px 20px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 20px;
+  margin: 50px;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #00ffe0;
+}
+
+.timeline-loop-scroll {
+  height: 500px; /* Adjust based on your need */
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline-loop-content {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-vertical 20s linear infinite;
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.timeline-loop-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.timeline-content {
+  background: rgba(20, 20, 40, 0.9);
+  border-radius: 15px;
+  padding: 20px 30px;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.timeline-content h2 {
+  color: #00ffe0;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #d0d0d0;
+  font-size: 16px;
+}
+
+.timeline-icon {
+  position: absolute;
+  top: -25px;
+  font-size: 30px;
+  color: #00ffe0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 12px #00ffe0;
+}

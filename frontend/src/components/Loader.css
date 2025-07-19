@@ -1,0 +1,36 @@
+.loader-container {
+  position: fixed;            /* Make it overlay the full viewport */
+  top: 0;
+  left: 0;
+  width: 800px;               /* Full viewport width */
+  height: 800px;              /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 9999;
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: 560px;
+  margin-top: 140px;
+}
+
+/* Fixed size for the animation */
+.loader-container .lottie-animation {
+  width: 300px;
+  height: 300px;
+}
+
+
+/* 📱 Extra responsive styles for very small screens */
+@media (max-width: 400px) {
+  .loader-container {
+    padding: 10px;
+  }
+
+  .loader-container .lottie-animation {
+    width: 80vw;
+    max-width: 250px;
+    min-width: 80px;
+  }
+}
