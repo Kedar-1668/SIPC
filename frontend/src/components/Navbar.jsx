@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiGmail, SiX, SiYoutube } from 'react-icons/si';
-import logo from "../assets/logo1.png";
-import Instagram from '../assets/Instagram.png';
-import Twitter from '../assets/Twitter.png';
-import YouTube from '../assets/Youtube.png';
-import Gmail from '../assets/Gmail.png';
+import logo from '../assets/logo1.png';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     const nav = document.querySelector('.navbar');
     const handleScroll = () => {
@@ -25,70 +19,37 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
+    <nav className="navbar">
       <div className="nav-left">
         <NavLink to="/" className="logo">
           <img src={logo} alt="SIPC Logo" className="logo-image" />
         </NavLink>
       </div>
 
-      <div className="hamburger" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-
-      <ul className={`pill-nav ${menuOpen ? 'show' : ''}`}>
+      <ul className="pill-nav">
         <li>
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
+          <NavLink to="/" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to="/about" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
+          <NavLink to="/about" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
             About Us
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to="/events" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
+          <NavLink to="/events" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
             Events
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to="/members" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
+          <NavLink to="/members" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
             Members
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink 
-            to="/partner" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
-            Partners
-          </NavLink>
-        </li> */}
         <li>
-          <NavLink 
-            to="/join" 
-            className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}
-          >
+          <NavLink to="/join" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
             Join Us
           </NavLink>
         </li>

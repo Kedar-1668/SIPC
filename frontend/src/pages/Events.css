@@ -43,14 +43,15 @@ h1 {
 }
 
 .events-grid {
-  margin-left: 300px;
-  margin-right: 120px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 40px 20px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px; /* Optional: controls overall width */
+  width: 100%;
 }
-
 .event-cards {
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +66,6 @@ h1 {
   box-shadow: 0 0 10px #00ffe0;
   border-radius: 12px;
   padding: 20px;
-  min-width: 500px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -103,10 +103,11 @@ h1 {
 }
 
 .event-card img{
-  width: 500px;
+  width: 100%;
   height: auto;
-  background-color: white;
+  max-width: 100%;
 }
+
 
 /* MODAL OVERLAY */
 .modal-overlay {
@@ -296,4 +297,126 @@ h1 {
   transform: scale(1.10);
   background: #0ff;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+}
+/* =======================================
+   Responsive Enhancements for Mobile/Tablet
+   ======================================= */
+@media (max-width: 1024px) {
+  .about-events-content {
+    margin: 0 30px;
+  }
+
+  .events-grid {
+    margin: 0 20px;
+    grid-template-columns: 1fr;
+    padding: 30px 10px;
+  }
+
+  .event-card {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .event-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content {
+    max-width: 90%;
+  }
+
+  .event-image {
+    height: 250px;
+  }
+
+  .events-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-events-content p,
+  .events-description p {
+    font-size: 1rem;
+  }
+
+  .events-container {
+    padding: 80px 15px 40px;
+  }
+
+  .event-card {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .event-image {
+    height: 200px;
+  }
+
+  .sub-event img {
+    height: 220px;
+  }
+
+  .explore-btn {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+
+  .events-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    width: 95%;
+    min-width: unset;
+    padding: 12px;
+  }
+
+  .event-card img {
+    width: 100%;
+  }
+
+  .modal-content {
+    padding: 16px;
+  }
+
+  .event-image {
+    height: 160px;
+  }
+
+  .sub-event {
+    min-width: 240px;
+    padding: 10px;
+  }
+
+  .sub-event img {
+    height: 180px;
+  }
+
+  .explore-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .cursor-glow {
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 12px 4px rgba(0, 150, 255, 0.7);
+  }
 }

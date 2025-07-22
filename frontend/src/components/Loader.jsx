@@ -1,12 +1,15 @@
-import React from 'react';
-import Lottie from 'lottie-react';
-import './Loader.css';
-import loadingAnimation from '../assets/loader.json'; // adjust the path if needed
+import React from "react";
+import Lottie from "lottie-react";
+import animationData from "../assets/loader.json"; // replace with your actual path
+import "./Loader.css";
 
 const Loader = () => {
   return (
     <div className="loader-container">
-      <Lottie animationData={loadingAnimation} loop={true} />
+      <div className="loader-background" />
+      <div className="lottie-animation">
+        <Lottie animationData={animationData} loop autoplay />
+      </div>
     </div>
   );
 };

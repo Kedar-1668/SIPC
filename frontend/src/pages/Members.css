@@ -103,3 +103,118 @@
   transition: transform 0.05s linear;
   z-index: 9999;
 }
+/* =======================================
+   Enhanced Responsiveness for Members Page
+   ======================================= */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .members-page {
+    padding: 120px 20px 40px;
+  }
+
+  .members-grid {
+    gap: 24px;
+  }
+
+  .member-card {
+    width: 220px;
+    padding: 18px;
+  }
+
+  .member-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social-icons img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Medium Mobile and smaller tablets */
+@media (max-width: 768px) {
+  .members-page {
+    padding: 100px 15px 30px;
+  }
+
+  .members-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .member-card {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .member-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .members-page {
+    padding: 80px 10px 20px;
+    margin-top: 150px;
+  }
+
+  .member-card {
+    width: 95%;
+    padding: 14px;
+  }
+
+  .member-card h3 {
+    font-size: 1rem;
+  }
+
+  .member-card p {
+    font-size: 0.9rem;
+  }
+
+  .member-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .social-icons img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-icons {
+    gap: 8px;
+  }
+}
+
+/* Extra small devices (low-end phones) */
+@media (max-width: 360px) {
+  .members-section h3 {
+    font-size: 1rem;
+  }
+
+  .member-card {
+    padding: 10px;
+  }
+
+  .member-card p {
+    font-size: 0.85rem;
+  }
+
+  .member-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+}

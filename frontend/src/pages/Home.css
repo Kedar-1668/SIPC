@@ -47,30 +47,29 @@ p {
 /* Video Section */
 .video-section {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 130vh;
   overflow: hidden;
-  margin-top: 140px;
+  margin-top: 50px;
 }
 
 .react-player-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.3s ease-out;
-  will-change: transform;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  z-index: 1;
 }
 
 .react-player {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover !important;
+  z-index: -1;
 }
-
 .overlay-content {
   position: absolute;
   top: 30%;
@@ -143,6 +142,7 @@ p {
   display: flex;
   gap: 20px;
   animation: scroll-loop 30s linear infinite;
+  width: max-content;
 }
 
 .event-card {
@@ -208,7 +208,7 @@ p {
 
 @keyframes scroll-loop {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
@@ -222,6 +222,24 @@ p {
 
   .event-card img {
     height: 140px;
+  }
+}
+@media (max-width: 480px) {
+  .event-card {
+    min-width: 180px;
+    padding: 15px;
+  }
+
+  .event-card img {
+    height: 130px;
+  }
+
+  .event-info h3 {
+    font-size: 1rem;
+  }
+
+  .event-info p {
+    font-size: 0.85rem;
   }
 }
 
@@ -420,7 +438,6 @@ p {
   text-align: center;
 }
 
-
 .partners-heading {
   font-size: 3rem;
   margin-bottom: 40px;
@@ -431,14 +448,15 @@ p {
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 40px;
+  gap: 20px;
   max-width: 1500px;
   margin: 0 auto;
   align-items: center;
   justify-items: center;
   transition: transform 0.3s ease;
 }
-.partners-grid:hover{
+
+.partners-grid:hover {
   transform: scale(1.05);
 }
 
@@ -447,8 +465,9 @@ p {
   height: auto;
   transition: transform 0.3s ease;
 }
+
 .leadership-section {
-  background: linear-gradient(to right, #021B2A,#000000, #021B2A);
+  background: linear-gradient(to right, #021B2A, #000000, #021B2A);
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -470,7 +489,8 @@ p {
   margin-left: 100px;
   margin-right: 100px;
 }
-.leadership-card:hover{
+
+.leadership-card:hover {
   transform: scale(1.05);
 }
 
@@ -513,6 +533,83 @@ p {
   font-weight: bold;
   color: #ccc;
 }
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .leadership-card {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 30px;
+  }
+
+  .leadership-card img {
+    max-width: 400px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-heading {
+    font-size: 2.5rem;
+  }
+
+  .leadership-card {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 25px;
+  }
+
+  .leadership-card.reverse {
+    flex-direction: column;
+  }
+
+  .leadership-card img {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .message-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .message-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-heading {
+    font-size: 2rem;
+  }
+
+  .leadership-card {
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .message-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .message-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .message-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .message-text p {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 

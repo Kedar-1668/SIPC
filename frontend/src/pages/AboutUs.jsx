@@ -49,6 +49,7 @@ const AboutUs = () => {
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       labels: {

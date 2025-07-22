@@ -83,14 +83,13 @@ const Home = () => {
             playing
             muted
             loop
+            controls={false}
             width="100%"
             height="100%"
             className="react-player"
-            config={{
-              file: { attributes: { style: { objectFit: "cover" } } }
-            }}
           />
         </div>
+
         <div className="video-overlay-button">
           <div className="btn-wrapper">
             <Link to="/join" className="section-btn">Join Us</Link>
