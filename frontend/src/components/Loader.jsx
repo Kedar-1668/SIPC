@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import './Loader.css';
-import loadingAnimation from '../assets/loader7.json'; // adjust the path if needed
+import loadingAnimation from '../assets/loader.json'; // adjust the path if needed
 
 const Loader = () => {
   return (
