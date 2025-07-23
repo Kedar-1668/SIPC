@@ -148,7 +148,10 @@
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  min-height: 400px;
+  height: 400px;
 }
+
 
 
 /* Cursor Glow */
@@ -202,7 +205,7 @@
 
 @media screen and (max-width: 480px) {
   .about-container{
-    margin-top: 150px;
+    margin-top: 230px;
   }
   .about-header h1 {
     font-size: 1.7rem;

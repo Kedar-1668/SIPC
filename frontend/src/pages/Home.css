@@ -17,6 +17,7 @@ body, html {
   background: linear-gradient(to right, #021B2A,#000000, #021B2A);
   font-family: 'Space Grotesk', sans-serif;
   color: #d0d0d0;
+  overflow-x: hidden;
 }
 
 /* Font Overrides */
@@ -37,7 +38,8 @@ p {
   transition: opacity 0.3s ease;
   background: linear-gradient(to right, #000000, #021B2A, #000000);
   border-radius: 20px;
-  margin: 50px;
+  margin: 50px auto;
+  max-width: 100%;
 }
 
 .section + .section {
@@ -47,7 +49,7 @@ p {
 /* Video Section */
 .video-section {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 130vh;
   overflow: hidden;
   margin-top: 50px;
@@ -58,7 +60,6 @@ p {
   width: 100%;
   height: 100%;
   padding-top: 56.25%; /* 16:9 aspect ratio */
-  z-index: 1;
 }
 
 .react-player {
@@ -68,18 +69,58 @@ p {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  z-index: -1;
 }
-.overlay-content {
+
+.video-overlay-button {
   position: absolute;
-  top: 30%;
-  width: 100%;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
   text-align: center;
-  color: white;
-  font-size: 2rem;
-  transition: transform 0.3s ease-out;
-  will-change: transform;
+  pointer-events: auto;
+  width: 100%;
 }
+
+@media (max-width: 480px) {
+  .section {
+    margin: 0; /* ✅ Fixes overflow */
+    padding: 0;
+  }
+  .video-section {
+    height: 100vh;
+    width: 100vw;  /* ✅ ensure it matches screen */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .react-player-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 0; /* ✅ remove aspect-ratio padding */
+  }
+
+  .react-player {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+  }
+  .video-overlay-button {
+    position: absolute;
+    bottom: 0px; /* ✅ Position near the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    width: auto;
+    z-index: 10;
+  }
+  .video-overlay-button
+  .section-btn {
+    font-size: 12px;
+    padding: 7px 18px;
+  }
+}
+
 
 
 /* About Us Section - Restored to original layout */
@@ -329,11 +370,9 @@ p {
     margin-top: 10px;
   }
 
-  .video-section {
-    height: 100vh;
-    width: 100vh;
-  }
 }
+
+
 
 
 

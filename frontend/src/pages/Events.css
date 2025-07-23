@@ -382,6 +382,9 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .events-page{
+    margin-top: 290px;
+  }
   .event-card {
     width: 95%;
     min-width: unset;

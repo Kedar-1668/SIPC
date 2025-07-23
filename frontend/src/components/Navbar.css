@@ -149,30 +149,28 @@
 @media (max-width: 480px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     padding: 10px 15px;
   }
 
   .logo {
-    width: 100%;
     justify-content: center;
+    width: 100%;
     margin-bottom: 10px;
   }
 
   .logo-image {
-    max-height: 50px;
+    max-height: 60px;
+    margin: 0 auto;
   }
 
   .pill-nav {
-    width: 100%;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    padding: 6px 0;
-    gap: 8px;
-    justify-content: flex-start;
-    scrollbar-width: thin;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+  white-space: normal;
+}
 
   .pill-nav::-webkit-scrollbar {
     height: 4px;
@@ -184,29 +182,32 @@
   }
 
   .pill-link {
+     margin: 8px;
     font-size: 13px;
     padding: 6px 12px;
     flex-shrink: 0;
   }
 
   .nav-right {
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     margin-top: 10px;
     gap: 6px;
+    width: 100%;
   }
 
   .follow-label {
-    width: 100%;
-    text-align: center;
     font-size: 0.85rem;
+    text-align: center;
   }
 
   .social-icons {
     justify-content: center;
     gap: 10px;
+    display: flex;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .social-icons a {
