@@ -130,7 +130,7 @@
 /* Mobile View */
 @media screen and (max-width: 480px) {
   .clubs-container{
-    margin-top: 130px;
+    margin-top: 0;
   }
   .clubs-title {
     font-size: 1.8rem;
