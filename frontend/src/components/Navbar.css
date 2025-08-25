@@ -90,11 +90,70 @@
 }
 
 /* REMOVE hamburger-related styles if they exist */
-.hamburger,
-.menu-open,
-.pill-nav.show {
-  display: none !important;
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+  height: 20px;
+  margin-left: auto;
+  z-index: 1100;
 }
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #00ffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger into an "X" */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* show hamburger */
+  }
+
+  .pill-nav {
+    display: none; /* hide menu by default */
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px; /* just below navbar */
+    right: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00ffff;
+    z-index: 1000;
+  }
+
+  .pill-nav.show {
+    display: flex; /* show menu when toggled */
+  }
+
+  .pill-link {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .nav-right {
+    display: none; /* hide social icons on small screens (optional) */
+  }
+}
+
 @media (max-width: 600px) {
   .navbar {
     flex-wrap: wrap;

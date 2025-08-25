@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -6,6 +6,8 @@ import { SiGmail, SiX, SiYoutube } from 'react-icons/si';
 import logo from '../assets/logo1.png';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const nav = document.querySelector('.navbar');
     const handleScroll = () => {
@@ -27,29 +29,37 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <ul className="pill-nav">
+      {/* Hamburger button */}
+      <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Links */}
+      <ul className={`pill-nav ${menuOpen ? 'show' : ''}`}>
         <li>
-          <NavLink to="/" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
+          <NavLink to="/" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`} onClick={() => setMenuOpen(false)}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
+          <NavLink to="/about" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`} onClick={() => setMenuOpen(false)}>
             About Us
           </NavLink>
         </li>
         <li>
-          <NavLink to="/events" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
+          <NavLink to="/events" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`} onClick={() => setMenuOpen(false)}>
             Events
           </NavLink>
         </li>
         <li>
-          <NavLink to="/members" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
+          <NavLink to="/members" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`} onClick={() => setMenuOpen(false)}>
             Members
           </NavLink>
         </li>
         <li>
-          <NavLink to="/join" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`}>
+          <NavLink to="/join" className={({ isActive }) => `pill-link${isActive ? " active" : ""}`} onClick={() => setMenuOpen(false)}>
             Join Us
           </NavLink>
         </li>
