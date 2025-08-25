@@ -116,26 +116,29 @@ const Home = () => {
       {/* Events Section */}
       <FadeInSection>
         <div id="events" className="section events-section">
-          <div className="parallax-layer background-layer"></div>
-          <div className="parallax-layer mid-layer">
-            <h1>Events</h1>
-            <p>We host workshops, speaker sessions, and coding contests throughout the year.</p>
-          </div>
-          <div className="events-wrapper parallax-layer fore-layer">
-            <div className="events-scroller" id="eventScroller">
-              {[...events, ...events].map((event, index) => (
-                <div className="event-card" key={index}>
-                  <img src={event.image} alt={event.title} />
-                  <div className="event-info">
-                    <h3>{event.title}</h3>
-                    <p>{event.description}</p>
-                  </div>
+        <div className="parallax-layer background-layer"></div>
+        <div className="parallax-layer mid-layer">
+          <h1>Events</h1>
+          <p>We host workshops, speaker sessions, and coding contests throughout the year.</p>
+        </div>
+
+        <div className="events-wrapper parallax-layer fore-layer">
+          <div className="events-scroller" id="eventScroller">
+            {[...events, ...events].map((event, index) => (
+              <div className="event-card" key={index}>
+                <img src={event.image} alt={event.title} />
+                <div className="event-info">
+                  <h3>{event.title}</h3>
+                  <p>{event.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </div>
+
           <Link to="/events" className="section-btn">View Events</Link>
         </div>
+
       </FadeInSection>
 
       <FadeInSection>

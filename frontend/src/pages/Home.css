@@ -171,19 +171,28 @@ p {
 }
 /* Events Section */
 .events-wrapper {
-  overflow: hidden;
+  overflow-x: auto;           /* allow manual scroll */
+  scrollbar-width: none;      /* hide scrollbar (Firefox) */
+  -ms-overflow-style: none;   /* hide scrollbar (Edge/IE) */
   width: 100%;
   position: relative;
+  scroll-snap-type: x mandatory; /* smooth snap on manual scroll */
+  display: flex;
 }
-.events-wrapper:hover{
+
+.events-wrapper::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+.events-wrapper:hover {
   transform: scale(1.05);
 }
 
 .events-scroller {
   display: flex;
   gap: 20px;
-  animation: scroll-loop 30s linear infinite;
   width: max-content;
+  animation: scroll-loop 30s linear infinite; /* always running */
 }
 
 .event-card {
@@ -211,14 +220,15 @@ p {
   object-fit: cover;
   border-radius: 10px;
 }
-.event-card img:hover{
+.event-card img:hover {
   animation: shake 0.5s;
 }
+
 @keyframes shake {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-3px, 2px); }
-  50% { transform: translate(3px, -2px); }
-  75% { transform: translate(-2px, 2px); }
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-3px, 2px); }
+  50%  { transform: translate(3px, -2px); }
+  75%  { transform: translate(-2px, 2px); }
   100% { transform: translate(0, 0); }
 }
 
@@ -248,23 +258,15 @@ p {
 }
 
 @keyframes scroll-loop {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-@media (max-width: 600px) {
-  .event-card {
-    min-width: 200px;
-  }
-
-  .event-card img {
-    height: 140px;
-  }
-}
+/* pause auto-scroll when user interacts */
+/* .events-wrapper:hover .events-scroller,
+.events-wrapper:active .events-scroller {
+  animation-play-state: paused;
+} */
 @media (max-width: 480px) {
   .event-card {
     min-width: 180px;
