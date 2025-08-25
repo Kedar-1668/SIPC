@@ -193,9 +193,9 @@ const Home = () => {
         </div>
       </FadeInSection>
       {/* Leadership Messages Section */}
-      <FadeInSection>
+      
         <div className="leadership-section">
-
+          <FadeInSection>
           {/* Branch Counsellor */}
           <div className="leadership-card">
             <img src={require('../assets/sipc.png')} alt="Branch Counsellor" />
@@ -212,7 +212,8 @@ const Home = () => {
               <p className="author">Dr. Jaideep Talukdar</p>
             </div>
           </div>
-
+          </FadeInSection>
+          <FadeInSection>
           {/* Faculty Coordinator */}
           <div className="leadership-card reverse">
             <img src={require('../assets/Agasthy.png')} alt="Faculty Coordinator" />
@@ -227,7 +228,9 @@ const Home = () => {
               <p className="author">Dr. Mahendra Prasad Agasty</p>
             </div>
           </div>
+          </FadeInSection>
 
+          <FadeInSection>
           {/* Technical Head */}
           <div className="leadership-card">
             <img src={require('../assets/Sudhanshu.png')} alt="Technical Head" />
@@ -244,7 +247,9 @@ const Home = () => {
               <p className="author">Dr. Sudhansu Mohan Biswal</p>
             </div>
           </div>
+          </FadeInSection>
 
+          <FadeInSection>
           {/* Chairperson */}
           <div className="leadership-card reverse">
             <img src={require('../assets/Satish1.png')} alt="Chairperson" />
@@ -260,9 +265,10 @@ const Home = () => {
               <p className="author">Er. Satish Kumar Das</p>
             </div>
           </div>
+          </FadeInSection>
 
         </div>
-      </FadeInSection>
+      
 
 
       <FadeInSection>
