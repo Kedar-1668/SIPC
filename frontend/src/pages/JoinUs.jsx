@@ -1,80 +1,112 @@
-import React, { useEffect, useRef } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import FadeInSection from '../components/FadeInSection';
-import './JoinUs.css';
-
-const clubsData = [
-  {
-    name: 'Silicon Circuit Club',
-    description: 'Dive into the world of electronics — design, build, and innovate with circuits that power tomorrow’s tech.',
-    link: 'https://aimlclub.example.com',
-    image: require('../assets/CircuitClub.png'),
-  },
-  {
-    name: 'Silicon Robotics Club',
-    description: 'Where innovation meets automation — build, code, and compete with robots that shape the future.',
-    link: 'https://cyberclub.example.com',
-    image: require('../assets/src.png'),
-  },
-  {
-    name: 'Silicon Switch Club',
-    description: 'Build and deploy responsive websites and mobile apps with modern technologies.',
-    link: 'https://webappclub.example.com',
-    image: require('../assets/sipc.png'),
-  },
-  {
-    name: 'The ISTE Student Chapter',
-    description: 'Sharpen problem-solving skills and compete in contests like Codeforces and Leetcode.',
-    link: 'https://cpclub.example.com',
-    image: require('../assets/sipc.png'),
-  },
-  {
-    name: 'The IEEE STudent Branch',
-    description: 'Sharpen problem-solving skills and compete in contests like Codeforces and Leetcode.',
-    link: 'https://cpclub.example.com',
-    image: require('../assets/ieee-silicon.png'),
-  }
-];
+import React, { useState, useRef, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import FadeInSection from "../components/FadeInSection";
+import "./JoinUs.css";
 
 const JoinUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    roll: "",
+    phone: "",
+    club: "",
+  });
+  const [status, setStatus] = useState("");
   const cursorRef = useRef(null);
+
   useEffect(() => {
-  const move = (e) => {
-    if (cursorRef.current) {
-      cursorRef.current.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
+    const move = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
+      }
+    };
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Submitting...");
+
+    try {
+      const response = await fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const result = await response.json();
+      if (result.status === "success") {
+        setStatus("✅ Registration successful!");
+        setFormData({ name: "", email: "", roll: "", phone: "", club: "" });
+      } else {
+        setStatus("❌ Something went wrong. Try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("⚠️ Error submitting form.");
     }
   };
-  window.addEventListener("mousemove", move);
-  return () => window.removeEventListener("mousemove", move);
-}, []);
 
   return (
     <>
       <Navbar />
       <div className="cursor-glow" ref={cursorRef}></div>
+      <FadeInSection>
+        <div className="section form">
+          <div className="form-container">
+            <h1 className="form-title">Join SIPC</h1>
+            <p className="form-subtitle">Fill in your details to register</p>
 
-      <div className="clubs-container">
-        <h1 className="clubs-title">SIPC Sub-Clubs</h1>
-        <p className="clubs-subtitle">Choose your path and join a club that fits your passion.</p>
+            <form className="club-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="roll"
+                placeholder="SIC"
+                value={formData.roll}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
 
-        <div className="clubs-list">
-          {clubsData.map((club, index) => (
-            <FadeInSection key={index}>
-              <div className="club-card">
-                <img src={club.image} alt={club.name} />
-                <div className="club-content">
-                  <h2>{club.name}</h2>
-                  <p>{club.description}</p>
-                  <a href={club.link} target="_blank" rel="noopener noreferrer" className="club-link">
-                    Visit Website
-                  </a>
-                </div>
-              </div>
-            </FadeInSection>
-          ))}
+              <button type="submit">Register</button>
+            </form>
+            <p className="form-status">{status}</p>
+          </div>
         </div>
-      </div>
+      
+      </FadeInSection>
+
       <Footer />
     </>
   );

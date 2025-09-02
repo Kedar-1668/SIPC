@@ -43,15 +43,30 @@ h1 {
 }
 
 .events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 40px 20px;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;          /* allow wrapping */
+  gap: 20px;                /* space between cards */
+  justify-content: center;  /* center cards horizontally */
+  align-items: flex-start;  /* align rows at the top */
   margin: 0 auto;
-  max-width: 1200px; /* Optional: controls overall width */
-  width: 100%;
+  max-width: 1500px;        /* keeps grid centered */
+  padding: 40px 20px;
 }
+
+.events-grid > .event-card {
+  flex: 0 1 300px;   /* all cards same base size */
+  width: 300px;      /* fix width */
+  height: 500px;     /* fix height */
+  box-sizing: border-box;
+  background: #111;  /* example background */
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* keeps content balanced */
+}
+
+
 .event-cards {
   display: flex;
   flex-wrap: wrap;

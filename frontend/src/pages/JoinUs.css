@@ -1,199 +1,52 @@
-.clubs-container {
-  padding: 160px 20px 60px;
-  background: linear-gradient(to right, #021B2A, #000000, #021B2A);
-  color: #d0d0d0;
-  text-align: center;
-  min-height: 100vh;
+#JoinUs{
+  background: linear-gradient(to right, #021B2A,#000000, #021B2A);
 }
 
-.clubs-title {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #00ffe0;
-  font-family: 'Orbitron', sans-serif;
-}
 
-.clubs-subtitle {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-bottom: 3rem;
-}
-
-.clubs-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px; /* Optional: controls overall width */
-  width: 100%;
-}
-
-.club-card {
+.form-container {
+  max-width: 500px;
+  margin: 130px auto;
+  padding: 30px;
   background: linear-gradient(to right, #000000, #021B2A, #000000);
   border-radius: 12px;
-  padding: 1.5rem;
-  width: 100%;
-  margin: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 8px 16px rgba(255,255,255,0.4);
   text-align: center;
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 1);
-  transition: transform 0.3s;
 }
 
-.club-card:hover {
+.form-container h1 {
+  margin-bottom: 10px;
+}
+
+.club-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.club-form input,
+.club-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.club-form button {
+  padding: 14px;
+  background: #00bfff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.club-form button:hover {
   transform: scale(1.05);
 }
 
-.club-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  background-color: white;
-  border-radius: 10px;
-}
-
-.club-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.club-content h2 {
-  color: #00ffe0;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.club-content p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-  word-wrap: break-word;
-}
-
-.club-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #00ffe7;
-  color: black;
-  text-decoration: none;
-  border-radius: 20px;
+.form-status {
+  margin-top: 15px;
   font-weight: bold;
-  margin-top: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(0, 255, 231, 0.3);
-}
-
-.club-link:hover {
-  transform: scale(1.10);
-  background: #0ff;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-}
-
-/* Tablet View */
-@media screen and (max-width: 768px) {
-  .clubs-title {
-    font-size: 2.2rem;
-  }
-
-  .clubs-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .club-card {
-    min-height: 420px;
-  }
-
-  .club-content h2 {
-    font-size: 1.3rem;
-  }
-
-  .club-content p {
-    font-size: 0.95rem;
-  }
-
-  .club-link {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile View */
-@media screen and (max-width: 480px) {
-  .clubs-container{
-    margin-top: 0;
-  }
-  .clubs-title {
-    font-size: 1.8rem;
-  }
-
-  .clubs-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .club-card img {
-    height: 150px;
-  }
-
-  .club-content h2 {
-    font-size: 1.2rem;
-  }
-
-  .club-content p {
-    font-size: 0.9rem;
-  }
-
-  .club-link {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* Extra Small Devices (360px and below) */
-@media screen and (max-width: 360px) {
-  .club-card {
-    padding: 1rem;
-  }
-
-  .club-card img {
-    height: 100px;
-  }
-
-  .club-content h2 {
-    font-size: 1rem;
-  }
-
-  .club-content p {
-    font-size: 0.85rem;
-  }
-
-  .club-link {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-  }
-}
-
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  border-radius: 50%;
-  background: rgba(65, 205, 225, 0.5);
-  box-shadow: 0 0 20px 8px rgba(0, 150, 255, 0.8);
-  mix-blend-mode: difference;
-  transform: translate3d(-100px, -100px, 0);
-  transition: transform 0.05s linear;
-  z-index: 9999;
 }

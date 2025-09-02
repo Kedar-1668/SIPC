@@ -187,20 +187,6 @@ const Events = () => {
     },
     // Add more events similarly...
   ], []); 
-  const clubEvents = [
-    {
-      title: 'Silicon Robotics Club',
-      description: 'Where innovation meets automation — build, code, and compete with robots that shape the future.',
-      website: 'https://roboticsclub.example.com',
-      image: require('../assets/src.png'),
-    },
-    {
-      title: 'Silicon Circuit Club',
-      description: 'Dive into the world of electronics — design, build, and innovate with circuits that power tomorrow’s tech.',
-      website: 'https://circuitclub.example.com',
-      image: require('../assets/CircuitClub.png'),
-    },
-  ];
 
 
   // Image rotation state
@@ -334,26 +320,6 @@ const Events = () => {
           </div>
         )}
 
-        {/* Club Events Section */}
-        <FadeInSection>
-          <div className="section" id="club-events">
-            <h1>Other Club Events</h1>
-            <div className="events-grid">
-              {clubEvents.map((club, index) => (
-                <div className="event-card" key={index}>
-                  <img src={club.image} alt={club.title} />
-                  <div className="event-info">
-                    <h2>{club.title}</h2>
-                    <p>{club.description}</p>
-                    <a href={club.website} target="_blank" rel="noopener noreferrer">
-                      <button className="explore-btn">Explore</button>
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeInSection>
       </div>
       <Footer />
     </>

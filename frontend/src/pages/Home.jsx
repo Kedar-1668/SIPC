@@ -36,16 +36,6 @@ const Home = () => {
       title: 'Smart India Hackathon',
       description: 'A national-level innovation competition where students solve real-world problems posed by government and industry.',
     },
-    // {
-    //   image: require('../assets/sipc.png'),
-    //   title: 'Alumni Talk',
-    //   description: 'Learn from our accomplished alumni in tech.',
-    // },
-    // {
-    //   image: require('../assets/sipc.png'),
-    //   title: 'Robotics Expo',
-    //   description: 'Showcase and witness cool robotic innovations.',
-    // },
   ];
 
   // Cursor Glow
@@ -77,8 +67,9 @@ const Home = () => {
 
       {/* Hero Section with Background Video */}
       <div id="home" className="video-section">
-        <div className="react-player-wrapper" ref={videoRef}>
+        <div className="video-container">
           <ReactPlayer
+            ref={videoRef}
             url={Background}
             playing
             muted
@@ -87,10 +78,24 @@ const Home = () => {
             width="100%"
             height="100%"
             className="react-player"
+            config={{
+              file: {
+                attributes: {
+                  style: {
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                  }
+                }
+              }
+            }}
           />
         </div>
 
-        <div className="video-overlay-button">
+        <div ref={overlayRef} className="video-overlay-button">
           <div className="btn-wrapper">
             <Link to="/join" className="section-btn">Join Us</Link>
           </div>

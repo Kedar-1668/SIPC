@@ -32,43 +32,270 @@ const membersData = {
   ],
   fourthYear: [
     {
-      name: 'Alice Roy',
+      name: 'Pranay Mishra',
       role: 'President',
-      img: require('../assets/person.png'),
+      img: require('../assets/Pranay_Mishra.png'),
       links: {
         instagram: '#',
         linkedin: '#',
         twitter: '#'
       }
     },
-    // ...add 6-7 more
+    {
+      name: 'Jagat Jyoti Behera',
+      role: 'President',
+      img: require('../assets/Jagat.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Smruti Ranjan Rout',
+      role: 'President',
+      img: require('../assets/SMRUTI_RANJAN_ROUT.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Manoj Kumar Senapati',
+      role: 'President',
+      img: require('../assets/Manoj_Kumar_Senapati.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Abinash Nanda',
+      role: 'President',
+      img: require('../assets/Abinash_Nanda.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Akankshya Hota',
+      role: 'President',
+      img: require('../assets/Akankshya_Hota.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Amarjyoti Senapati',
+      role: 'President',
+      img: require('../assets/Amarjyoti_Senapati.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Nirmalya Sahoo',
+      role: 'President',
+      img: require('../assets/Nirmalya_sahoo.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Piush Praharaj',
+      role: 'President',
+      img: require('../assets/Piush_Praharaj.jpg'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Priyabrat Omm Kumar',
+      role: 'President',
+      img: require('../assets/Priyabrat_Omm_Kumar.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sadiqua Farheen',
+      role: 'President',
+      img: require('../assets/SADIQUA_FARHEEN.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sourav Subhakanta Dash',
+      role: 'President',
+      img: require('../assets/SouravSubhakantaDash.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sumeet Kumar Rout',
+      role: 'President',
+      img: require('../assets/SUMEET_KUMAR_ROUT.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Nirmalya Parida',
+      role: 'President',
+      img: require('../assets/SKM_2217.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
   ],
   thirdYear: [
     {
-      name: 'Bob Kumar',
+      name: 'Aditya Das',
       role: 'Coordinator',
-      img: require('../assets/person.png'),
+      img: require('../assets/Aditya Das.png'),
       links: {
         instagram: '#',
         linkedin: '#',
         twitter: '#'
       }
     },
-    // ...add 6-7 more
-  ],
-  secondYear: [
     {
-      name: 'Charlie Das',
-      role: 'Member',
-      img: require('../assets/person.png'),
+      name: 'Anish Aniket',
+      role: 'Coordinator',
+      img: require('../assets/Anish Aniket.png'),
       links: {
         instagram: '#',
         linkedin: '#',
         twitter: '#'
       }
     },
-    // ...add 6-7 more
-  ]
+    {
+      name: 'Bishwajit Panigrahi',
+      role: 'Coordinator',
+      img: require('../assets/Bishwajit Panigrahi.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Debasish Majhi',
+      role: 'Coordinator',
+      img: require('../assets/DEBASISH MAJHI.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Deepak Kumar Gouda',
+      role: 'Coordinator',
+      img: require('../assets/Deepak Kumar Gouda.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Jayshree Padhi',
+      role: 'Coordinator',
+      img: require('../assets/Jayshree padhi.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Megha Patro',
+      role: 'Coordinator',
+      img: require('../assets/Megha Patro.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sambit Subhrajit Swain',
+      role: 'Coordinator',
+      img: require('../assets/sambit subhrajit swain.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sampad Prasad Nayak',
+      role: 'Coordinator',
+      img: require('../assets/Sampad Prasad Nayak.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'SN Parsuram Swain',
+      role: 'Coordinator',
+      img: require('../assets/SN Parsuram Swain.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Sambit Das',
+      role: 'Coordinator',
+      img: require('../assets/Sambit Das.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+    {
+      name: 'Ayushman parida',
+      role: 'Coordinator',
+      img: require('../assets/Ayushman parida.png'),
+      links: {
+        instagram: '#',
+        linkedin: '#',
+        twitter: '#'
+      }
+    },
+
+  ],
+  
 };
 
 const MemberCard = ({ name, role, img, links }) => (
@@ -127,9 +354,6 @@ const Members = () => {
       </FadeInSection>
       <FadeInSection>
         <MembersSection title="3rd Year Members" members={membersData.thirdYear} />
-      </FadeInSection>
-      <FadeInSection>
-        <MembersSection title="2nd Year Members" members={membersData.secondYear} />
       </FadeInSection>
     </div>
     <Footer/>

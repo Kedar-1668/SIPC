@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import "./Layout.css"
-import Loader from '../components/Loader';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import "./Layout.css";
 
 const Layout = () => {
-  const [loading, setLoading] = useState(true);
-  const location = useLocation();
-
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
-
-  return loading ? <Loader /> : <Outlet />;
+  return (
+    <div>
+      {/* You can put your Navbar here */}
+      <Outlet />
+      {/* And Footer here */}
+    </div>
+  );
 };
 
 export default Layout;
