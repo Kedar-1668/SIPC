@@ -120,18 +120,20 @@
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-@media (max-width: 1280px) {
+
+  @media (max-width: 1280px) {
   .hamburger {
-    display: flex; /* show hamburger */
+    display: flex;
   }
 
   .pill-nav {
-    display: none; /* hide menu by default */
+    display: none;
     flex-direction: column;
+    align-items: center; /* center buttons */
     gap: 15px;
     background: rgba(0, 0, 0, 0.95);
     position: absolute;
-    top: 70px; /* just below navbar */
+    top: 70px;
     right: 20px;
     padding: 20px;
     border-radius: 12px;
@@ -140,19 +142,25 @@
   }
 
   .pill-nav.show {
-    display: flex; /* show menu when toggled */
+    display: flex;
   }
 
   .pill-link {
-    width: 100%;
+    display: block;
+    width: 180px;          /* ✅ fixed equal width for all */
     text-align: center;
     font-size: 16px;
+    padding: 12px 0;       /* equal padding top/bottom */
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .nav-right {
-    display: none; /* hide social icons on small screens (optional) */
+    display: none;
   }
 }
+
+
 
 @media (max-width: 600px) {
   .navbar {
