@@ -39,7 +39,7 @@ const JoinUs = () => {
         "https://script.google.com/macros/s/AKfycbzxWHTElollyQ-B5by4ShSTV9qghrgyxi4NYMrmWnnTBWoxcGses6FnAvfmqbrg3JbM/exec",
         {
           method: "POST",
-          mode: "no-cors", // 👈 required for Google Apps Script
+          mode: "no-cors", 
           body: JSON.stringify(formData),
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const JoinUs = () => {
       // Assume success
       setStatus("Registration successful!");
       setFormData({ name: "", email: "", roll: "", phone: "" });
-      setShowWhatsApp(true); // 👈 show link now
+      setShowWhatsApp(true); // 
     } catch (error) {
       console.error("Submit Error:", error);
       setStatus("Error submitting form.");
