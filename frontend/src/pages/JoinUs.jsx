@@ -10,9 +10,9 @@ const JoinUs = () => {
     email: "",
     roll: "",
     phone: "",
-    club: "",
   });
   const [status, setStatus] = useState("");
+  const [showWhatsApp, setShowWhatsApp] = useState(false); // 👈 new state
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -32,26 +32,30 @@ const JoinUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Submitting...");
+    setShowWhatsApp(false); // reset on new submit
 
     try {
-      const response = await fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzxWHTElollyQ-B5by4ShSTV9qghrgyxi4NYMrmWnnTBWoxcGses6FnAvfmqbrg3JbM/exec",
+        {
+          method: "POST",
+          mode: "no-cors", // 👈 required for Google Apps Script
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      const result = await response.json();
-      if (result.status === "success") {
-        setStatus("✅ Registration successful!");
-        setFormData({ name: "", email: "", roll: "", phone: "", club: "" });
-      } else {
-        setStatus("❌ Something went wrong. Try again.");
-      }
+      console.log("Raw Response:", response);
+
+      // Assume success
+      setStatus("Registration successful!");
+      setFormData({ name: "", email: "", roll: "", phone: "" });
+      setShowWhatsApp(true); // 👈 show link now
     } catch (error) {
-      console.error(error);
-      setStatus("⚠️ Error submitting form.");
+      console.error("Submit Error:", error);
+      setStatus("Error submitting form.");
     }
   };
 
@@ -101,12 +105,24 @@ const JoinUs = () => {
 
               <button type="submit">Register</button>
             </form>
+
             <p className="form-status">{status}</p>
+
+            {/* 👇 Conditionally render WhatsApp link */}
+            {showWhatsApp && (
+              <div className="whatsapp-link">
+                <a
+                  href="https://chat.whatsapp.com/Gbs5L2zvaFvJbgxd5Z4Md0?mode=ems_copy_c" // replace with your group link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join our WhatsApp Group
+                </a>
+              </div>
+            )}
           </div>
         </div>
-      
       </FadeInSection>
-
       <Footer />
     </>
   );

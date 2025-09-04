@@ -41,7 +41,7 @@ const clubsData = [
     name: 'Silicon Switch Club',
     description: 'Build and deploy responsive websites and mobile apps with modern technologies.',
     link: 'https://webappclub.example.com',
-    image: require('../assets/sipc.png'),
+    image: require('../assets/switch.png'),
   },
   {
     name: 'The ISTE Student Chapter',

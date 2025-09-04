@@ -14,10 +14,11 @@
 }
 
 .form-container h1 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .club-form {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -26,20 +27,50 @@
 .club-form input,
 .club-form select {
   padding: 12px;
-  border-radius: 8px;
-  border: none;
+  border-radius: 15px;
+  border: 2px solid #00ffe7; /* glowing border */
   outline: none;
+  background: #021B2A; /* dark background */
+  color: #00ffe7; /* text color */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 255, 231, 0.4);
 }
 
+/* Placeholder color */
+.club-form input::placeholder,
+.club-form select::placeholder {
+  color: #7fffea;
+  opacity: 0.7;
+}
+
+/* On focus */
+.club-form input:focus,
+.club-form select:focus {
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+  background: #000;
+  color: #fff;
+}
+
+
 .club-form button {
-  padding: 14px;
-  background: #00bfff;
-  color: white;
-  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  color: black;
+  background: #00ffe7;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.6);
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .club-form button:hover {
@@ -50,3 +81,94 @@
   margin-top: 15px;
   font-weight: bold;
 }
+
+.whatsapp-link {
+  margin-top: 20px;
+}
+
+.whatsapp-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00ffe7;
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-link a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.9);
+}
+/* 📱 Small devices (max 480px) */
+@media (max-width: 480px) {
+  .form-container {
+    margin: 80px 15px;
+    padding: 20px;
+  }
+
+  .form-container h1 {
+    font-size: 20px;
+  }
+
+  .form-container p {
+    font-size: 14px;
+  }
+
+  .club-form input,
+  .club-form select {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .club-form button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .whatsapp-link a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* 📱 Medium devices (481px – 768px, tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .form-container {
+    margin: 100px 30px;
+    padding: 25px;
+  }
+
+  .form-container h1 {
+    font-size: 22px;
+  }
+
+  .form-container p {
+    font-size: 15px;
+  }
+
+  .club-form input,
+  .club-form select {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .club-form button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  .whatsapp-link a {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+/* 💻 Large devices (769px – 1024px, small laptops) */
+
+
+
+
+

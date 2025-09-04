@@ -174,6 +174,7 @@ const Home = () => {
             <div className="partner-logo"><img src={require('../assets/NIT_Rourkela.png')} alt="" /></div>
             <div className="partner-logo"><img src={require('../assets/IIT.png')} alt="" /></div>
             <div className="partner-logo"><img src={require('../assets/IIIT.png')} alt="" /></div>
+            <div className="partner-logo"><img src={require('../assets/Haldia.png')} alt="" /></div>
             <div className="partner-logo"><img src={require('../assets/KIIT.png')} alt="" /></div>
             <div className="partner-logo"><img src={require('../assets/ITER.png')} alt="" /></div>
             <div className="partner-logo"><img src={require('../assets/OUTR.png')} alt="" /></div>
