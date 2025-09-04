@@ -19,7 +19,7 @@ const FadeInSection = ({ children }) => {
     } else {
       controls.start({
         opacity: 0,
-        y: 40,
+        y: 20,
         transition: { duration: 0.6, ease: 'easeIn' },
       });
     }

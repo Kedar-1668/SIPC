@@ -1,5 +1,10 @@
-#JoinUs{
+body, html {
+  margin: 0;
+  padding: 0;
   background: linear-gradient(to right, #021B2A,#000000, #021B2A);
+  font-family: 'Space Grotesk', sans-serif;
+  color: #d0d0d0;
+  overflow-x: hidden;
 }
 
 
@@ -167,6 +172,36 @@
 }
 
 /* 💻 Large devices (769px – 1024px, small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .form-container {
+    margin: 120px auto;
+    padding: 30px;
+  }
+
+  .form-container h1 {
+    font-size: 26px;
+  }
+
+  .form-container p {
+    font-size: 16px;
+  }
+
+  .club-form input,
+  .club-form select {
+    font-size: 15px;
+  }
+
+  .club-form button {
+    font-size: 17px;
+    padding: 12px 28px;
+  }
+
+  .whatsapp-link a {
+    font-size: 16px;
+  }
+}
+
+/* 🖥️ Extra large devices (1025px – 1440px) */
 
 
 
