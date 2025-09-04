@@ -118,12 +118,23 @@ const AboutUs = () => {
   useEffect(() => {
     const move = (e) => {
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
+        const x = e.clientX ?? e.touches?.[0].clientX;
+        const y = e.clientY ?? e.touches?.[0].clientY;
+        if (x && y) {
+          cursorRef.current.style.transform = `translate3d(${x - 15}px, ${y - 15}px, 0)`;
+        }
       }
     };
+
     window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    window.addEventListener("touchmove", move);
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("touchmove", move);
+    };
   }, []);
+
 
   return (
     <>
