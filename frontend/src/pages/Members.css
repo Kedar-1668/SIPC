@@ -39,12 +39,13 @@
 }
 
 .member-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border-radius: 15%;
   object-fit: cover;
   margin: 0 auto 15px;
-  border: 3px solid #ffd700;
+  /* border: 3px solid rgba(255, 255, 255, 0.7); */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
 }
 
 .member-card h3 {

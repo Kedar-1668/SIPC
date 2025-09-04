@@ -52,7 +52,7 @@ const clubsData = [
   {
     name: 'The IEEE Student Branch',
     description: 'Sharpen problem-solving skills and compete in contests like Codeforces and Leetcode.',
-    link: 'https://cpclub.example.com',
+    link: 'https://www.ieeesilicon.org/',
     image: require('../assets/ieee-silicon.png'),
   }
 ];
