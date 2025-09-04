@@ -219,3 +219,36 @@
     height: 20px;
   }
 }
+/* Large Laptops and Desktops */
+@media (max-width: 1280px) {
+  .members-page {
+    padding: 140px 30px 50px;
+  }
+
+  .members-grid {
+    gap: 28px;
+  }
+
+  .member-card {
+    width: 230px;
+    padding: 18px;
+  }
+
+  .member-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .member-card p {
+    font-size: 1rem;
+  }
+
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}
