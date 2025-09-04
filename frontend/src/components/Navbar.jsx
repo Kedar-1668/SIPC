@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { SiGmail, SiX, SiYoutube } from 'react-icons/si';
+import { FaInstagram } from 'react-icons/fa';
+// import { FaLinkedin } from 'react-icons/fa';
+import { SiX, SiYoutube } from 'react-icons/si';
+// import { SiGmail } from 'react-icons/si';
 import logo from '../assets/logo1.png';
 
 const Navbar = () => {
@@ -68,11 +70,11 @@ const Navbar = () => {
       <div className="nav-right">
         <span className="follow-label">Follow:</span>
         <div className="social-icons">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          <a href="https://gmail.com" target="_blank" rel="noopener noreferrer"><SiGmail /></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><SiX /></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><SiYoutube /></a>
+          <a href="https://www.instagram.com/nirmansilicon?igsh=ajZpN2s0amt5bGw4" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a> */}
+          {/* <a href="https://gmail.com" target="_blank" rel="noopener noreferrer"><SiGmail /></a> */}
+          <a href="https://x.com/nirman_silicon" target="_blank" rel="noopener noreferrer"><SiX /></a>
+          <a href="https://youtube.com/@nirmansilicon?si=x4_Qi315jG1FAl1s" target="_blank" rel="noopener noreferrer"><SiYoutube /></a>
         </div>
       </div>
     </nav>

@@ -207,7 +207,7 @@ const Home = () => {
           <FadeInSection>
           {/* Branch Counsellor */}
           <div className="leadership-card">
-            <img src={require('../assets/sipc.png')} alt="Branch Counsellor" />
+            <img src={require('../assets/talukdar.png')} alt="Branch Counsellor" />
             <div className="message-text">
               <h2>Message from <span className="highlight">Vice-Chancellor</span></h2>
               <p>"As a faculty member, it is a privilege to welcome you to NIRMAN 4.0—our 

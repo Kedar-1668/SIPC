@@ -56,19 +56,22 @@ p {
 }
 
 .video-container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
-  overflow: hidden;
+  height: 100%;
 }
 
 .react-player {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 /* Force video to cover entire container */
@@ -80,9 +83,9 @@ p {
 
 .video-overlay-button {
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
-  bottom: 40%;
+  bottom: 30%;
   transform: translate(-50%, -50%);
   z-index: 5;
   text-align: center;

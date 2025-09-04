@@ -1,7 +1,9 @@
 import React from 'react';
 import './Footer.css';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { SiGmail, SiX, SiYoutube } from 'react-icons/si';
+import { FaInstagram } from 'react-icons/fa';
+// import { FaLinkedin } from 'react-icons/fa';
+import {  SiX, SiYoutube } from 'react-icons/si';
+// import { SiGmail } from 'react-icons/si';
 import sipcLogo from '../assets/logo1.png'; // Replace with your IEEE logo path
 import siliconLogo from '../assets/Silicon_logo.png'; // Replace with your Silicon University logo path
 
@@ -21,11 +23,11 @@ const Footer = () => {
           <div className="footer-section footer-center">
             <p className="follow-text">Follow us</p>
             <div className="social-icons">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <a href="https://gmail.com" target="_blank" rel="noopener noreferrer"><SiGmail /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><SiX /></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><SiYoutube /></a>
+              <a href="https://www.instagram.com/nirmansilicon?igsh=ajZpN2s0amt5bGw4" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a> */}
+              {/* <a href="https://gmail.com" target="_blank" rel="noopener noreferrer"><SiGmail /></a> */}
+              <a href="https://x.com/nirman_silicon" target="_blank" rel="noopener noreferrer"><SiX /></a>
+              <a href="https://youtube.com/@nirmansilicon?si=x4_Qi315jG1FAl1s" target="_blank" rel="noopener noreferrer"><SiYoutube /></a>
             </div>
           </div>
 
